@@ -1,0 +1,108 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css);
+
+/* style.css */
+
+/* لضمان أن المظهر يتناسب مع الأجهزة المختلفة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #00ff00;
+    font-family: monospace;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#content {
+    background-color: #1e1e1e;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    height: 70vh;  /* زيادة الارتفاع ليكون أكبر */
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* تنسيق الرسالة النهائية */
+#message-box {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px;
+    border: 4px solid #00ff00;
+    color: #00ff00;
+    font-size: 48px;
+    text-align: center;
+    background-color: black;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* تأثير الكتابة */
+#message-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 5s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* استعلامات لتنسيق الموقع على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    #content {
+        font-size: 14px;  /* تصغير الخط على الشاشات الصغيرة */
+        height: 75vh;  /* زيادة ارتفاع المنطقة التي يظهر فيها الأكواد */
+        padding: 15px;
+    }
+
+    #message-box {
+        padding: 40px;  /* تقليل الحواف في المستطيل */
+        font-size: 36px;  /* تصغير الخط */
+        width: 90%;  /* جعل المستطيل أكثر تناسبًا مع الشاشات الصغيرة */
+        max-width: 90%;  /* جعل المستطيل يتناسب مع العرض */
+    }
+}
+
+@media (max-width: 480px) {
+    #content {
+        font-size: 12px;  /* تصغير الخط أكثر على الشاشات الصغيرة جدًا */
+        height: 80vh;  /* زيادة الارتفاع ليظهر أكثر */
+    }
+
+    #message-box {
+        padding: 30px;  /* تقليل الحواف أكثر */
+        font-size: 28px;  /* تصغير الخط أكثر */
+    }
+}
